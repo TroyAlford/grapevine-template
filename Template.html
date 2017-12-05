@@ -28,6 +28,11 @@
           <attr>Auspice<val>[Auspice]</val></attr>
           <attr>Breed<val>[Breed]</val></attr>
         [/?]
+        [?Race KueiJin]
+          <attr>Dharma<val>[PathTraits]</val></attr>
+          <attr>Balance<val>[Balance]</val></attr>
+          <attr>Direction<val>[Direction]</val></attr>
+        [/?]
         [?Race Mage]
           <attr>Tradition<val>[Tradition]</val></attr>
           <attr>Faction<val>[Faction]</val></attr>
@@ -64,6 +69,10 @@
           <attr>Pack<val>[Pack]</val></attr>
           <attr>Renown<val>[Glory] Glory | [Honor] Honor | [Wisdom] Wisdom</val></attr>
         [/?]
+        [?Race KueiJin]
+          <attr>Hun<val>[Hun]</val></attr>
+          <attr>Po<val>[Po]</val></attr>
+        [/?]
         [?Race Mage]
           <attr>Essence<val>[Essence]</val></attr>
           <attr>Cabal<val>[Cabal]</val></attr>
@@ -99,10 +108,10 @@
           <attr>Demeanor<val>[Demeanor]</val></attr>
         [/!]
         [?Race Fera]
-          <attr>Position<val>[Position]</val></attr>
+        <attr>Position<val>[Position]</val></attr>
         [/?]
-        [?Race Fera]
-          <attr>Position<val>[Position]</val></attr>
+        [?Race KueiJin]
+          <attr>P'o Nature<val>[PoArchetype]</val></attr>
         [/?]
         [?Race Mortal]
           <attr>Humanity<val>[#Humanity]</val></attr>
@@ -138,6 +147,20 @@
         <section>
           <header>[Gnosis] Gnosis</header>
           <attr centered>[Tally Gnosis TempGnosis]</attr>
+        </section>
+        <section>
+          <header>[Willpower] Willpower</header>
+          <attr centered>[Tally Willpower TempWillpower]</attr>
+        </section>
+      [/?]
+      [?Race KueiJin]
+        <section>
+          <header>[Yin] Yin Chi | [Yang] Yang Chi</header>
+          <attr centered>[Tally Yin TempYin] | [Tally Yang TempYang]</attr>
+        </section>
+        <section>
+          <header>[DemonChi] Demon Chi</header>
+          <attr centered>[Tally DemonChi TempDemonChi]</attr>
         </section>
         <section>
           <header>[Willpower] Willpower</header>
@@ -252,6 +275,16 @@
       <section Fera>
         <header>[#Gifts] Gifts</header>
         [repeat]<attr>[Gifts 0]</attr>[/repeat]
+        <none>None</none>
+        <header>[#Rites] Rites</header>
+        [repeat]<attr>[Rites 0]</attr>[/repeat]
+        <none>None</none>
+      </section>
+    [/?]
+    [?Race KueiJin]
+      <section KueiJin>
+        <header>[#Disciplines] Disciplines</header>
+        [repeat]<attr>[Disciplines 0]</attr>[/repeat]
         <none>None</none>
         <header>[#Rites] Rites</header>
         [repeat]<attr>[Rites 0]</attr>[/repeat]
@@ -375,6 +408,8 @@
 
     character.Changeling section > title,
     character.Changeling header { font-family: BoydUncial; }
+    character.KueiJin section > title,
+    character.KueiJin section > header { font-family: Akira; }
     character.Mage section > title,
     character.Mage section > header { font-family: Abbess; }
     character.Mage header { font-family: Visitation; }
@@ -387,6 +422,7 @@
 
     /* Hide non-matching race sections */
     .Changeling [Fera],
+    .Changeling [KueiJin],
     .Changeling [Mage],
     .Changeling [Mortal],
     .Changeling [Mummy],
@@ -394,14 +430,24 @@
     .Changeling [Werewolf],
 
     .Fera [Changeling],
+    .Fera [KueiJin],
     .Fera [Mage],
     .Fera [Mortal],
     .Fera [Mummy],
     .Fera [Vampire],
     .Fera [Werewolf],
 
+    .KueiJin [Changeling],
+    .KueiJin [Fera],
+    .KueiJin [Mage],
+    .KueiJin [Mortal],
+    .KueiJin [Mummy],
+    .KueiJin [Vampire],
+    .KueiJin [Werewolf],
+
     .Mage [Changeling],
     .Mage [Fera],
+    .Mage [KueiJin],
     .Mage [Mortal],
     .Mage [Mummy],
     .Mage [Vampire],
@@ -409,6 +455,7 @@
 
     .Mortal [Changeling],
     .Mortal [Fera],
+    .Mortal [KueiJin],
     .Mortal [Mage],
     .Mortal [Mummy],
     .Mortal [Vampire],
@@ -416,6 +463,7 @@
 
     .Mummy [Changeling],
     .Mummy [Fera],
+    .Mummy [KueiJin],
     .Mummy [Mage],
     .Mummy [Mortal],
     .Mummy [Vampire],
@@ -423,6 +471,7 @@
 
     .Vampire [Changeling],
     .Vampire [Fera],
+    .Vampire [KueiJin],
     .Vampire [Mage],
     .Vampire [Mortal],
     .Vampire [Mummy],
@@ -430,6 +479,7 @@
 
     .Werewolf [Changeling],
     .Werewolf [Fera],
+    .Werewolf [KueiJin],
     .Werewolf [Mage],
     .Werewolf [Mortal],
     .Werewolf [Mummy],
@@ -438,6 +488,7 @@
 
     /* Display race sections within the race's sheet */
     .Changeling [Changeling],
+    .KueiJin [KueiJin],
     .Mage [Mage],
     .Mortal [Mortal],
     .Mummy [Mummy],
