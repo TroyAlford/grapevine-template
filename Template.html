@@ -23,24 +23,15 @@
           <attr>Kith<val>[Kith]</val></attr>
           <attr>Seeming<val>[Seeming]</val></attr>
         [/?]
-        [?Race Mage]
-          <attr>Tradition<val>[Tradition]</val></attr>
-          <attr>Faction<val>[Faction]</val></attr>
-          <attr>Rank<val>[Rank]</val></attr>
-        [/?]
-        [?Race Vampire]
-          <attr>Clan<val>[Clan]</val></attr>
-          <attr>Sect<val>[Sect]</val></attr>
-        [/?]
-        [?Race Werewolf]
-          <attr>Tribe<val>[Tribe]</val></attr>
-          <attr>Auspice<val>[Auspice]</val></attr>
-          <attr>Breed<val>[Breed]</val></attr>
-        [/?]
         [?Race Fera]
           <attr>Fera<val>[Fera]</val></attr>
           <attr>Auspice<val>[Auspice]</val></attr>
           <attr>Breed<val>[Breed]</val></attr>
+        [/?]
+        [?Race Mage]
+          <attr>Tradition<val>[Tradition]</val></attr>
+          <attr>Faction<val>[Faction]</val></attr>
+          <attr>Rank<val>[Rank]</val></attr>
         [/?]
         [?Race Mortal]
           <attr>Regnant/Guardian<val>[Regnant]</val></attr>
@@ -52,6 +43,15 @@
           <attr>Integrity<val>[Integrity]</val></attr>
           <attr>Joy<val>[Joy]</val></attr>
         [/?]
+        [?Race Vampire]
+          <attr>Clan<val>[Clan]</val></attr>
+          <attr>Sect<val>[Sect]</val></attr>
+        [/?]
+        [?Race Werewolf]
+          <attr>Tribe<val>[Tribe]</val></attr>
+          <attr>Auspice<val>[Auspice]</val></attr>
+          <attr>Breed<val>[Breed]</val></attr>
+        [/?]
       </section>
       <section>
         [?Race Changeling]
@@ -59,23 +59,14 @@
           <attr>Title<val>[Title]</val></attr>
           <attr>House<val>[House]</val></attr>
         [/?]
-        [?Race Mage]
-          <attr>Essence<val>[Essence]</val></attr>
-          <attr>Cabal<val>[Cabal]</val></attr>
-        [/?]
-        [?Race Vampire]
-          <attr>Generation<val>[Generation]</val></attr>
-          <attr>Title<val>[Title]</val></attr>
-        [/?]
-        [?Race Werewolf]
-          <attr>Rank<val>[Rank]</val></attr>
-          <attr>Pack<val>[Pack]</val></attr>
-          <attr>Renown<val>[Glory] Glory | [Honor] Honor | [Wisdom] Wisdom</val></attr>
-        [/?]
         [?Race Fera]
           <attr>Rank<val>[Rank]</val></attr>
           <attr>Pack<val>[Pack]</val></attr>
           <attr>Renown<val>[Glory] Glory | [Honor] Honor | [Wisdom] Wisdom</val></attr>
+        [/?]
+        [?Race Mage]
+          <attr>Essence<val>[Essence]</val></attr>
+          <attr>Cabal<val>[Cabal]</val></attr>
         [/?]
         [?Race Mortal]
           <attr>Conscience<val>[Conscience]</val></attr>
@@ -86,6 +77,15 @@
           <attr>Ba<val>[Ba]</val></attr>
           <attr>Ka<val>[Ka]</val></attr>
           <attr>Sekhem<val>[Sekhem]</val></attr>
+        [/?]
+        [?Race Vampire]
+          <attr>Generation<val>[Generation]</val></attr>
+          <attr>Title<val>[Title]</val></attr>
+        [/?]
+        [?Race Werewolf]
+          <attr>Rank<val>[Rank]</val></attr>
+          <attr>Pack<val>[Pack]</val></attr>
+          <attr>Renown<val>[Glory] Glory | [Honor] Honor | [Wisdom] Wisdom</val></attr>
         [/?]
       </section>
       <section>
@@ -98,7 +98,7 @@
           <attr>Nature<val>[Nature]</val></attr>
           <attr>Demeanor<val>[Demeanor]</val></attr>
         [/!]
-        [?Race Werewolf]
+        [?Race Fera]
           <attr>Position<val>[Position]</val></attr>
         [/?]
         [?Race Fera]
@@ -109,6 +109,9 @@
         [/?]
         [?Race Mummy]
           <attr>Balance<val>[MBalance]</val></attr>
+        [/?]
+        [?Race Werewolf]
+          <attr>Position<val>[Position]</val></attr>
         [/?]
       </section>
     </section>
@@ -245,7 +248,8 @@
         <none>None</none>
       </section>
     [/?]
-      <section Fera Werewolf>
+    [?Race Fera]
+      <section Fera>
         <header>[#Gifts] Gifts</header>
         [repeat]<attr>[Gifts 0]</attr>[/repeat]
         <none>None</none>
@@ -253,6 +257,7 @@
         [repeat]<attr>[Rites 0]</attr>[/repeat]
         <none>None</none>
       </section>
+    [/?]
     [?Race Mage]
       <section Mage>
         <header>[#Spheres] Spheres</header>
@@ -284,6 +289,16 @@
         <none>None</none>
         <header>[#Rituals] Rituals</header>
         [repeat]<attr>[Rituals 0]</attr>[/repeat]
+        <none>None</none>
+      </section>
+    [/?]
+    [?Race Werewolf]
+      <section Werewolf>
+        <header>[#Gifts] Gifts</header>
+        [repeat]<attr>[Gifts 0]</attr>[/repeat]
+        <none>None</none>
+        <header>[#Rites] Rites</header>
+        [repeat]<attr>[Rites 0]</attr>[/repeat]
         <none>None</none>
       </section>
     [/?]
