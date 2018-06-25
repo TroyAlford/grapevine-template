@@ -7,9 +7,6 @@
  [emptydot <dot spent></dot>]
  [divider ]
  -->
-  <head>
-    <link href="./2014.css" rel="stylesheet" />
-  </head>
   <body>
 <!--[report Characters]-->
   <character class="[race]">
@@ -338,6 +335,7 @@
     <section highlight>
       <header>[#Backgrounds] Backgrounds</header>
       [repeat]<attr>[Backgrounds]</attr>[/repeat]
+      <none>None</none>
       <header>[#Merits] Merits / [#Flaws] Flaws</header>
       [repeat]<attr merit>[Merits]</attr>[/repeat]
       [repeat]<attr flaw>[Flaws]</attr>[/repeat]
@@ -408,8 +406,8 @@
 
     character.Changeling section > title,
     character.Changeling header { font-family: BoydUncial; }
-    character.KueiJin section > title,
-    character.KueiJin section > header { font-family: Akira; }
+    character.Kuei-Jin section > title,
+    character.Kuei-Jin section > header { font-family: Akira; }
     character.Mage section > title,
     character.Mage section > header { font-family: Abbess; }
     character.Mage header { font-family: Visitation; }
@@ -437,13 +435,13 @@
     .Fera [Vampire],
     .Fera [Werewolf],
 
-    .KueiJin [Changeling],
-    .KueiJin [Fera],
-    .KueiJin [Mage],
-    .KueiJin [Mortal],
-    .KueiJin [Mummy],
-    .KueiJin [Vampire],
-    .KueiJin [Werewolf],
+    .Kuei-Jin [Changeling],
+    .Kuei-Jin [Fera],
+    .Kuei-Jin [Mage],
+    .Kuei-Jin [Mortal],
+    .Kuei-Jin [Mummy],
+    .Kuei-Jin [Vampire],
+    .Kuei-Jin [Werewolf],
 
     .Mage [Changeling],
     .Mage [Fera],
@@ -488,7 +486,7 @@
 
     /* Display race sections within the race's sheet */
     .Changeling [Changeling],
-    .KueiJin [KueiJin],
+    .Kuei-Jin [KueiJin],
     .Mage [Mage],
     .Mortal [Mortal],
     .Mummy [Mummy],
@@ -534,6 +532,9 @@
     section > header {
       font-size: 16px;
       padding: 5px 0 3px;
+    }
+    section > header:only-child {
+      min-height: 150px;
     }
     section > header + attr {
       border-top: 1px solid #666;
@@ -608,6 +609,10 @@
       font-style: italic;
       padding: 3px;
       text-align: center;
+    }
+    none {
+      color: transparent;
+      min-height: 100px;
     }
 
     section[quintessence] attr {
