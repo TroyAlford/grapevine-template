@@ -1,12 +1,12 @@
 <html>
- <!-- [template Report] -->
  <!-- Options
- [dateformat yyyy-mm-dd]
- [display 3] Trait OOO (Note)
- [dot <dot filled></dot>]
- [emptydot <dot spent></dot>]
- [divider ]
- -->
+  [template Character]
+  [dateformat yyyy-mm-dd]
+  [display 7] Trait (Note) OOO
+  [dot <dot filled></dot>]
+  [emptydot <dot spent></dot>]
+  [divider ]
+-->
   <body>
 <!--[report Characters]-->
   <character class="[race]">
@@ -14,7 +14,7 @@
       <name>[Name]</name>
       <race>[Race]</race>
     </header>
-    <section>
+    <section description>
       <section>
         [?Race Changeling]
           <attr>Kith<val>[Kith]</val></attr>
@@ -212,7 +212,7 @@
         <section><header inline>Willpower <attr centered>[Tally Willpower TempWillpower]</attr></header></section>
       [/?]
     </section>
-  <section highlight>
+  <section attributes highlight>
     <section>
       <header>[#Physical] Physical / [#PhysicalNeg] Negative</header>
       [repeat]<attr>[Physical]</attr>[/repeat]
@@ -229,14 +229,21 @@
       [repeat]<attr neg>[MentalNeg]</attr>[/repeat]
     </section>
   </section>
-  <section highlight>
+  <section highlight other>
     <section>
       <header>[#Abilities] Abilities</header>
       [repeat]<attr>[Abilities]</attr>[/repeat]
       <none>None</none>
     </section>
-    [?Race Changeling]
-      <section Changeling>
+    <section>
+      <section>
+        <header>Items/Equipment</header>
+        [repeat]
+          <attr>[display 0][Equipment]<val>[display 10][Equipment]</val></attr>
+        [/repeat]
+        [display 7]
+      </section>
+      <section race="Changeling">
         <header>[#Arts] Arts</header>
         [repeat]<attr>[Arts 0]</attr>[/repeat]
         <none>None</none>
@@ -244,9 +251,7 @@
         [repeat]<attr>[Realms 0]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    [?Race Fera]
-      <section Fera>
+      <section race="Fera">
         <header>[#Gifts] Gifts</header>
         [repeat]<attr>[Gifts 0]</attr>[/repeat]
         <none>None</none>
@@ -254,9 +259,7 @@
         [repeat]<attr>[Rites 0]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    [?Race KueiJin]
-      <section KueiJin>
+      <section race="KueiJin">
         <header>[#Disciplines] Disciplines</header>
         [repeat]<attr>[Disciplines 0]</attr>[/repeat]
         <none>None</none>
@@ -264,9 +267,7 @@
         [repeat]<attr>[Rites 0]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    [?Race Mage]
-      <section Mage>
+      <section race="Mage">
         <header>[#Spheres] Spheres</header>
         [repeat]<attr>[Spheres 0]</attr>[/repeat]
         <none>None</none>
@@ -274,23 +275,17 @@
         [repeat]<attr>[Rotes]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    [?Race Mortal]
-      <section Mortal>
+      <section race="Mortal">
         <header>[#Powers] Powers</header>
         [repeat]<attr>[Powers 0]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    [?Race Mummy]
-      <section Mummy>
+      <section race="Mummy">
         <header>[#Hekau] Hekau</header>
         [repeat]<attr>[Hekau 0]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    [?Race Vampire]
-      <section Vampire>
+      <section race="Vampire">
         <header>[#Disciplines] Disciplines</header>
         [repeat]<attr>[Disciplines 0]</attr>[/repeat]
         <none>None</none>
@@ -298,9 +293,7 @@
         [repeat]<attr>[Rituals 0]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    [?Race Werewolf]
-      <section Werewolf>
+      <section race="Werewolf">
         <header>[#Gifts] Gifts</header>
         [repeat]<attr>[Gifts 0]</attr>[/repeat]
         <none>None</none>
@@ -308,25 +301,39 @@
         [repeat]<attr>[Rites 0]</attr>[/repeat]
         <none>None</none>
       </section>
-    [/?]
-    <section highlight>
-      <header>[#Backgrounds] Backgrounds</header>
-      [repeat]<attr>[Backgrounds]</attr>[/repeat]
-      <none>None</none>
-      <header>[#Merits] Merits / [#Flaws] Flaws</header>
-      [repeat]<attr merit>[Merits]</attr>[/repeat]
-      [repeat]<attr flaw>[Flaws]</attr>[/repeat]
-      <none>None</none>
-      <header>Influences</header>
-      [repeat]<attr>[Influences]</attr>[/repeat]
-      <none>None</none>
-
-      <header v-only>Blood Bonds / Viniculum</header>
-      [repeat]<attr v-only>[Bonds]</attr>[/repeat]
-      <none v-only>None</none>
-
-      <header>Health Levels</header>
-      [repeat]<attr health>[HealthLevels]</attr>[/repeat]
+    </section>
+    <section>
+      <section>
+        <header>[#Backgrounds] Backgrounds</header>
+        [repeat]<attr>[Backgrounds]</attr>[/repeat]
+        <none>None</none>
+      </section>
+      <section>
+        <header>[#Merits] Merits / [#Flaws] Flaws</header>
+        [repeat]<attr merit>[Merits]</attr>[/repeat]
+        [repeat]<attr flaw>[Flaws]</attr>[/repeat]
+        <none>None</none>
+      </section>
+      <section>
+        <header>Influences</header>
+        [repeat]<attr>[Influences]</attr>[/repeat]
+        <none>None</none>
+      </section>
+      <section race="Vampire">
+        <header>Blood Bonds / Viniculum</header>
+        [repeat]<attr>[Bonds]</attr>[/repeat]
+        <none>None</none>
+      </section>
+      <section>
+        <header>Health Levels</header>
+        [repeat]
+          <attr health>
+            [display 0][HealthLevels]
+            <val>[display 8][HealthLevels]</val>
+          </attr>
+        [/repeat]
+        [display 7]
+      </section>
     </section>
   </section>
 </character>
@@ -334,11 +341,13 @@
  </body>
   <script>
     function init() {
-      document.querySelectorAll('attr:empty').forEach(attr => attr.parentElement.removeChild(attr));
+      const RACES = ['Changeling', 'Demon', 'Fera', 'Hunter', 'KueiJin', 'Mage', 'Mortal', 'Mummy', 'Vampire', 'Various', 'Werewolf', 'Wraith']
 
-      Array.from(document.querySelectorAll('[v-only]'))
-        .filter(el => !el.closest('character.Vampire'))
+      Array.from(document.querySelectorAll('[race]'))
+        .filter(el => !el.closest(`character.${el.getAttribute('race')}`))
         .forEach(el => el.remove())
+
+      document.querySelectorAll('attr:empty').forEach(attr => attr.parentElement.removeChild(attr));
 
       // Sort by Type, then by Name
       const $body = document.querySelector('body')
@@ -384,7 +393,8 @@
     * { box-sizing: border-box; }
     body { font-family: Calibri; font-size: 12px; }
     character {
-      display: block;
+      display: flex;
+      flex-direction: column;
       margin: 0 auto;
       page-break-after: always;
       width: 7.5in;
@@ -405,72 +415,6 @@
     character.Werewolf section > title, character.Werewolf header { font-family: Werewolf; }
     character.Wraith section > title, character.Wraith header { font-family: Wraith; }
 
-    /* Hide non-matching race sections */
-    .Changeling [Fera],
-    .Changeling [KueiJin],
-    .Changeling [Mage],
-    .Changeling [Mortal],
-    .Changeling [Mummy],
-    .Changeling [Vampire],
-    .Changeling [Werewolf],
-
-    .Fera [Changeling],
-    .Fera [KueiJin],
-    .Fera [Mage],
-    .Fera [Mortal],
-    .Fera [Mummy],
-    .Fera [Vampire],
-    .Fera [Werewolf],
-
-    .Kuei-Jin [Changeling],
-    .Kuei-Jin [Fera],
-    .Kuei-Jin [Mage],
-    .Kuei-Jin [Mortal],
-    .Kuei-Jin [Mummy],
-    .Kuei-Jin [Vampire],
-    .Kuei-Jin [Werewolf],
-
-    .Mage [Changeling],
-    .Mage [Fera],
-    .Mage [KueiJin],
-    .Mage [Mortal],
-    .Mage [Mummy],
-    .Mage [Vampire],
-    .Mage [Werewolf],
-
-    .Mortal [Changeling],
-    .Mortal [Fera],
-    .Mortal [KueiJin],
-    .Mortal [Mage],
-    .Mortal [Mummy],
-    .Mortal [Vampire],
-    .Mortal [Werewolf],
-
-    .Mummy [Changeling],
-    .Mummy [Fera],
-    .Mummy [KueiJin],
-    .Mummy [Mage],
-    .Mummy [Mortal],
-    .Mummy [Vampire],
-    .Mummy [Werewolf],
-
-    .Vampire [Changeling],
-    .Vampire [Fera],
-    .Vampire [KueiJin],
-    .Vampire [Mage],
-    .Vampire [Mortal],
-    .Vampire [Mummy],
-    .Vampire [Werewolf],
-
-    .Werewolf [Changeling],
-    .Werewolf [Fera],
-    .Werewolf [KueiJin],
-    .Werewolf [Mage],
-    .Werewolf [Mortal],
-    .Werewolf [Mummy],
-    .Werewolf [Vampire]
-    { display: none; }
-
     /* Display race sections within the race's sheet */
     .Changeling [Changeling],
     .Kuei-Jin [KueiJin],
@@ -485,7 +429,6 @@
     attr[fera-descriptor], attr[fera-descriptor] > val { display: flex; flex-direction: row; justify-content: space-evenly; }
     attr[fera-descriptor] > val { display: flex; flex: 1; justify-content: space-between; }
     val[renown] { display: flex; flex: 1; float: none; justify-content: space-between; }
-    renown > temp { color: #999; }
     [ajaba][honor]:before,
     [ratkin][honor]:before { content: 'Obligation' }
     [ananasi][honor]:before { content: 'Wisdom' }
@@ -632,7 +575,6 @@
     attr[blood] dot:nth-of-type(5n + 1) { margin-left: .25em; }
 
     attr[health] dot { background-color: transparent; }
-    attr[health] dot:first-child { margin-left: auto; }
 
     attr + attr[neg] { margin-top: 5px; }
     attr[neg] + attr[neg] { margin-top: 0; }
