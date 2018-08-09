@@ -3,7 +3,7 @@
  <!-- Options
  [dateformat yyyy-mm-dd]
  [display 3] Trait OOO (Note)
- [dot <dot></dot>]
+ [dot <dot filled></dot>]
  [emptydot <dot spent></dot>]
  [divider ]
  -->
@@ -21,9 +21,24 @@
           <attr>Seeming<val>[Seeming]</val></attr>
         [/?]
         [?Race Fera]
-          <attr>Fera<val>[Fera]</val></attr>
-          <attr>Auspice<val>[Auspice]</val></attr>
-          <attr>Breed<val>[Breed]</val></attr>
+          <attr fera-descriptor>
+            <val>
+              <part><b>Fera</b>: [Fera]</part>
+              <part><b>Breed</b>: [Breed]</part>
+            </val>
+          </attr>
+          <attr fera-descriptor>
+            <val>
+              <part><b>Rank</b>: [Rank]</part>
+              <part><b>Auspice</b>: [Auspice]</part>
+            </val>
+          </attr>
+          <attr fera-descriptor>
+            <val>
+              <part><b>Pack</b>: [Pack]</part>
+              <part><b>Position</b>: [Position]</part>
+            </val>
+          </attr>
         [/?]
         [?Race KueiJin]
           <attr>Dharma<val>[PathTraits]</val></attr>
@@ -50,9 +65,24 @@
           <attr>Sect<val>[Sect]</val></attr>
         [/?]
         [?Race Werewolf]
-          <attr>Tribe<val>[Tribe]</val></attr>
-          <attr>Auspice<val>[Auspice]</val></attr>
-          <attr>Breed<val>[Breed]</val></attr>
+          <attr fera-descriptor>
+            <val>
+              <part><b>Tribe</b>: [Tribe]</part>
+              <part><b>Breed</b>: [Breed]</part>
+            </val>
+          </attr>
+          <attr fera-descriptor>
+            <val>
+              <part><b>Rank</b>: [Rank]</part>
+              <part><b>Auspice</b>: [Auspice]</part>
+            </val>
+          </attr>
+          <attr fera-descriptor>
+            <val>
+              <part><b>Pack</b>: [Pack]</part>
+              <part><b>Position</b>: [Position]</part>
+            </val>
+          </attr>
         [/?]
       </section>
       <section>
@@ -62,9 +92,8 @@
           <attr>House<val>[House]</val></attr>
         [/?]
         [?Race Fera]
-          <attr>Rank<val>[Rank]</val></attr>
-          <attr>Pack<val>[Pack]</val></attr>
-          <attr>Renown<val>[Glory] Glory | [Honor] Honor | [Wisdom] Wisdom</val></attr>
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
         [/?]
         [?Race KueiJin]
           <attr>Hun<val>[Hun]</val></attr>
@@ -89,9 +118,8 @@
           <attr>Title<val>[Title]</val></attr>
         [/?]
         [?Race Werewolf]
-          <attr>Rank<val>[Rank]</val></attr>
-          <attr>Pack<val>[Pack]</val></attr>
-          <attr>Renown<val>[Glory] Glory | [Honor] Honor | [Wisdom] Wisdom</val></attr>
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
         [/?]
       </section>
       <section>
@@ -100,139 +128,88 @@
           <attr>Unseelie Legacy<val>[UnseelieLegacy]</val></attr>
           <attr>Threshold<val>[Threshold]</val></attr>
         [/?]
-        [!Race Changeling]
-          <attr>Nature<val>[Nature]</val></attr>
-          <attr>Demeanor<val>[Demeanor]</val></attr>
-        [/!]
         [?Race Fera]
-        <attr>Position<val>[Position]</val></attr>
+          <attr [Fera] glory><val> [Tally Glory]<temp>[TempGlory]</temp></val></attr>
+          <attr [Fera] honor><val> [Tally Honor]<temp>[TempHonor]</temp></val></attr>
+          <attr [Fera] wisdom><val> [Tally Wisdom]<temp>[TempWisdom]</temp></val></attr>
         [/?]
         [?Race KueiJin]
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
           <attr>P'o Nature<val>[PoArchetype]</val></attr>
         [/?]
+        [?Race Mage]
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
+        [/?]
         [?Race Mortal]
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
           <attr>Humanity<val>[#Humanity]</val></attr>
         [/?]
         [?Race Mummy]
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
           <attr>Balance<val>[MBalance]</val></attr>
         [/?]
+        [?Race Vampire]
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
+        [/?]
         [?Race Werewolf]
-          <attr>Position<val>[Position]</val></attr>
+          <attr garou glory><val> [Tally Glory]<temp>[TempGlory]</temp></val></attr>
+          <attr garou honor><val> [Tally Honor]<temp>[TempHonor]</temp></val></attr>
+          <attr garou wisdom><val> [Tally Wisdom]<temp>[TempWisdom]</temp></val></attr>
         [/?]
       </section>
     </section>
     <section>
       [?Race Changeling]
-        <section>
-          <header>[Glamour] Glamour</header>
-          <attr centered>[Tally Glamour TempGlamour]</attr>
-        </section>
-        <section>
-          <header>[Willpower] Willpower</header>
-          <attr centered>[Tally Willpower TempWillpower]</attr>
-        </section>
-        <section>
-          <header>[Banality] Banality</header>
-          <attr centered>[Tally Banality TempBanality]</attr>
-        </section>
+        <section><header inline>Glamour <attr centered>[Tally Glamour]</attr></header></section>
+        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
+        <section><header inline>Banality <attr centered>[Tally Banality]</attr></header></section>
       [/?]
       [?Race Fera]
-        <section>
-          <header>[Rage] Rage</header>
-          <attr centered>[Tally Rage TempRage]</attr>
-        </section>
-        <section>
-          <header>[Gnosis] Gnosis</header>
-          <attr centered>[Tally Gnosis TempGnosis]</attr>
-        </section>
-        <section>
-          <header>[Willpower] Willpower</header>
-          <attr centered>[Tally Willpower TempWillpower]</attr>
-        </section>
+        <section><header inline>Rage <attr centered>[Tally Rage]</temp></attr></header></section>
+        <section><header inline>Gnosis <attr centered>[Tally Gnosis]</attr></header></section>
+        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
       [/?]
       [?Race KueiJin]
-        <section>
-          <header>[Yin] Yin Chi | [Yang] Yang Chi</header>
-          <attr centered>[Tally Yin TempYin] | [Tally Yang TempYang]</attr>
-        </section>
-        <section>
-          <header>[DemonChi] Demon Chi</header>
-          <attr centered>[Tally DemonChi TempDemonChi]</attr>
-        </section>
-        <section>
-          <header>[Willpower] Willpower</header>
-          <attr centered>[Tally Willpower TempWillpower]</attr>
-        </section>
+        <section><header inline>Yin Chi | Yang Chi <attr centered>[Tally Yin] | [Tally Yang]</attr></header></section>
+        <section><header inline>Demon Chi <attr centered>[Tally DemonChi]</attr></header></section>
+        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
       [/?]
       [?Race Mage]
         <section>
-          <header>[Arete] Arete</header>
-          <attr centered>[Tally Arete TempArete]</attr>
+          <header inline>Arete <attr centered>[Tally Arete]</attr></header>
         </section>
         <section quintessence>
           <attr>Quintessence [Tally Quintessence]</attr>
           <attr>Paradox [Tally Paradox]</attr>
         </section>
         <section>
-          <header>[Willpower] Willpower</header>
-          <attr centered>[Tally Willpower TempWillpower]</attr>
+          <header inline>Willpower <attr centered>[Tally Willpower]</attr></header>
         </section>
       [/?]
       [?Race Mortal]
-        <section>
-          <header>[Blood] Blood</header>
-          <attr centered>[Tally Blood TempBlood]</attr>
-        </section>
-        <section>
-          <header>&nbsp;</header>
-          <attr centered>&nbsp;</attr>
-        </section>
-        <section>
-          <header>[Willpower] Willpower</header>
-          <attr centered>[Tally Willpower TempWillpower]</attr>
-        </section>
+        <section><header inline>Blood <attr centered>[Tally Blood]</attr></header></section>
+        <section><header inline>&nbsp; <attr centered>&nbsp;</attr></header></section>
+        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
       [/?]
       [?Race Mummy]
-        <section>
-          <header>[Ba] Ba</header>
-          <attr centered>[Tally Ba TempBa]</attr>
-        </section>
-        <section>
-          <header>[Ka] Ka</header>
-          <attr centered>[Tally Ka TempKa]</attr>
-        </section>
-        <section>
-          <header>[Sekhem] Sekhem</header>
-          <attr centered>[Tally Sekhem TempSekhem]</attr>
-        </section>
+        <section><header inline>Ba <attr centered>[Tally Ba]</attr></header></section>
+        <section><header inline>Ka <attr centered>[Tally Ka]</attr></header></section>
+        <section><header inline>Sekhem <attr centered>[Tally Sekhem]</attr></header></section>
       [/?]
       [?Race Vampire]
-        <section>
-          <header>[Blood] Max Blood</header>
-          <attr centered>[Tally Blood TempBlood]</attr>
-        </section>
-        <section>
-          <header>[Willpower] Willpower</header>
-          <attr centered>[Tally Willpower TempWillpower]</attr>
-        </section>
-        <section>
-          <header>Path: [Path] ([PathTraits])</header>
-          <attr centered>[Tally PathTraits]</attr>
-        </section>
+        <section><header inline>Max Blood <attr centered blood>[Tally Blood]</attr></header></section>
+        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
+        <section><header inline>Path: [Path] <attr centered>[Tally PathTraits]</attr></header></section>
       [/?]
       [?Race Werewolf]
-        <section>
-          <header>[Rage] Rage</header>
-          <attr centered>[Tally Rage TempRage]</attr>
-        </section>
-        <section>
-          <header>[Gnosis] Gnosis</header>
-          <attr centered>[Tally Gnosis TempGnosis]</attr>
-        </section>
-        <section>
-          <header>[Willpower] Willpower</header>
-          <attr centered>[Tally Willpower TempWillpower]</attr>
-        </section>
+        <section><header inline>Rage <attr centered>[Tally Rage TempRage]</attr></header></section>
+        <section><header inline>Gnosis <attr centered>[Tally Gnosis TempGnosis]</attr></header></section>
+        <section><header inline>Willpower <attr centered>[Tally Willpower TempWillpower]</attr></header></section>
       [/?]
     </section>
   <section highlight>
@@ -349,48 +326,48 @@
       <none v-only>None</none>
 
       <header>Health Levels</header>
-      [repeat]<attr>[HealthLevels]</attr>[/repeat]
+      [repeat]<attr health>[HealthLevels]</attr>[/repeat]
     </section>
   </section>
 </character>
 <!--[/report]-->
  </body>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script>
-    $(function() {
-      $('attr:empty').remove();
-      $('attr > dot:nth-child(21)').each(function (ix, el) {
-        $('<br />').insertBefore($(el));
-        $(el).closest('attr').css({ height: '28px' });
-      });
-      $('[v-only]').filter(function (ix, el) {
-        return $(el).closest('character.Vampire').length == 0;
-      }).remove();
+    function init() {
+      document.querySelectorAll('attr:empty').forEach(attr => attr.parentElement.removeChild(attr));
+
+      Array.from(document.querySelectorAll('[v-only]'))
+        .filter(el => !el.closest('character.Vampire'))
+        .forEach(el => el.remove())
+
       // Sort by Type, then by Name
-      var $body = $('body'), $chars = $('character');
-      $chars.sort(function (first, second) {
-        var a1 = $(first).attr('class');
-        var b1 = $(second).attr('class');
+      const $body = document.querySelector('body')
+      const $chars = Array.from(document.querySelectorAll('character'))
 
-        if (a1 > b1) {
-          return 1;
-        } else if (b1 > a1) {
-          return -1;
+      $chars.sort((first, second) => {
+        const race1 = first.className
+        const race2 = second.className
+
+        if (race1 > race2) {
+          return 1
+        } else if (race2 > race1) {
+          return -1
         } else {
-          var a2 = $(first).find('name').text();
-          var b2 = $(second).find('name').text();
+          const name1 = first.querySelector('name').textContent;
+          var name2 = second.querySelector('name').textContent;
 
-          if (a2 > b2) {
-            return 1;
-          } else if (b2 > a2) {
-            return -1;
+          if (name1 > name2) {
+            return 1
+          } else if (name2 > name1) {
+            return -1
           } else {
-            return 0;
+            return 0
           }
         }
-      });
-      $chars.detach().appendTo($body);
-    });
+      }).forEach($char => { $body.appendChild($char) })
+    }
+
+    window.addEventListener('load', init)
   </script>
 
   <style type="text/css">
@@ -505,6 +482,55 @@
     .Vampire [Vampire]
     { display: inline-block; }
 
+    attr[fera-descriptor], attr[fera-descriptor] > val { display: flex; flex-direction: row; justify-content: space-evenly; }
+    attr[fera-descriptor] > val { display: flex; flex: 1; justify-content: space-between; }
+    val[renown] { display: flex; flex: 1; float: none; justify-content: space-between; }
+    renown > temp { color: #999; }
+    [ajaba][honor]:before,
+    [ratkin][honor]:before { content: 'Obligation' }
+    [ananasi][honor]:before { content: 'Wisdom' }
+    [apis][honor]:before,
+    [bastet][honor]:before,
+    [camazotz][honor]:before,
+    [corax][honor]:before,
+    [garou][honor]:before,
+    [grondr][honor]:before,
+    [gurahl][honor]:before,
+    [mokole][honor]:before { content: 'Honor' }
+    [kitsune][honor]:before { content: 'Toru' }
+    [nuwisha][honor]:before { content: 'Humor' }
+    [rokea][honor]:before { content: 'Harmony' }
+
+    [ajaba][glory]:before,
+    [bastet][glory]:before { content: 'Ferocity' }
+    [ananasi][glory]:before { content: 'Obedience' }
+    [apis][glory]:before,
+    [camazotz][glory]:before,
+    [corax][glory]:before,
+    [garou][glory]:before,
+    [grondr][glory]:before,
+    [mokole][glory]:before,
+    [nuwisha][glory]:before { content: 'Glory' }
+    [gurahl][glory]:before { content: 'Succor' }
+    [kitsune][glory]:before { content: 'Kagayaki' }
+    [ratkin][glory]:before { content: 'Infamy' }
+    [rokea][glory]:before { content: 'Valor' }
+
+    [ajaba][wisdom]:before,
+    [ananasi][wisdom]:before,
+    [bastet][wisdom]:before,
+    [nuwisha][wisdom]:before,
+    [ratkin][wisdom]:before { content: 'Cunning' }
+    [rokea][wisdom]:before { content: 'Innovation' }
+    [apis][wisdom]:before,
+    [camazotz][wisdom]:before,
+    [corax][wisdom]:before,
+    [garou][wisdom]:before,
+    [grondr][wisdom]:before,
+    [gurahl][wisdom]:before,
+    [mokole][wisdom]:before { content: 'Wisdom' }
+    [kitsune][wisdom]:before { content: 'Chie' }
+
     character > header {
       display: block;
       padding: 10px 0;
@@ -523,6 +549,7 @@
       right: 0;
       top: 50%;
     }
+    header[inline] { display: flex; flex-direction: row; justify-content: space-between; }
 
     character > section {
       display: inline-block;
@@ -542,7 +569,7 @@
       font-size: 16px;
       padding: 5px 0 3px;
     }
-    section > header:only-child {
+    section > header:not([inline]):only-child {
       min-height: 150px;
     }
     section > header + attr {
@@ -554,26 +581,37 @@
     }
 
     attr {
-      display: block;
-      text-align: left;
+      display: flex;
+      font-weight: bold;
+      overflow-x: hidden;
       padding: 1px 4px;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     attr:first-child { margin-top: 3px; } attr:last-child { margin-bottom: 3px; }
     attr > val {
       display: inline-block;
-      float: right;
+      flex: 1;
+      font-weight: normal;
+      text-align: right;
     }
-    attr > dot {
+    attr dot {
       border-radius: 4px;
       border: 1px solid #000;
       display: inline-block;
-      float: right;
       height: 8px;
       margin: 3px 1px 0 0;
       width: 8px;
     }
+    attr temp { flex: 1; }
+    temp dot { border-color: #999; }
+    val > dot:nth-of-type(6), temp > dot:nth-of-type(6) { margin-left: .25em; }
+    temp:before { content: ' + ' }
+    temp:after { content: ' temp' }
 
-    dot { background: #fff; } dot[filled] { background: #000; }
+    dot { background: #fff; }
+    dot[filled] { background: #000; }
     dot[spent] { position: relative; }
     dot[spent]:before {
       -webkit-transform: rotate(-45deg);
@@ -586,8 +624,15 @@
       width: 8px;
     }
 
-    attr[centered] { text-align: center; height: 20px; }
+    attr[centered] { text-align: center; height: 20px; justify-content: center; }
     attr[centered] > dot { float:none; }
+
+    attr[blood] { flex-wrap: wrap; height: auto; }
+    attr[blood] dot { border-radius: 0; background-color: transparent; height: 10px; width: 10px; }
+    attr[blood] dot:nth-of-type(5n + 1) { margin-left: .25em; }
+
+    attr[health] dot { background-color: transparent; }
+    attr[health] dot:first-child { margin-left: auto; }
 
     attr + attr[neg] { margin-top: 5px; }
     attr[neg] + attr[neg] { margin-top: 0; }
@@ -603,12 +648,6 @@
       background: #eee;
     }
 
-    attr {
-      overflow-x: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: 100%;
-    }
     attr:empty, attr + attr:empty + none, attr:not(:empty) + none {
       display: none;
     }
