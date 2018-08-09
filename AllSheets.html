@@ -3,7 +3,7 @@
   [template Character]
   [dateformat yyyy-mm-dd]
   [display 7] Trait (Note) OOO
-  [dot <dot filled></dot>]
+  [dot <dot></dot>]
   [emptydot <dot spent></dot>]
   [divider ]
 -->
@@ -165,74 +165,77 @@
     </section>
     <section>
       [?Race Changeling]
-        <section><header inline>Glamour <attr centered>[Tally Glamour]</attr></header></section>
-        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
-        <section><header inline>Banality <attr centered>[Tally Banality]</attr></header></section>
+        <section><header inline>[#Glamour] Glamour <attr centered>[Tally Glamour]</attr></header></section>
+        <section><header inline>[#Willpower] Willpower <attr centered>[Tally Willpower]</attr></header></section>
+        <section><header inline>[#Banality] Banality <attr centered>[Tally Banality]</attr></header></section>
       [/?]
       [?Race Fera]
-        <section><header inline>Rage <attr centered>[Tally Rage]</temp></attr></header></section>
-        <section><header inline>Gnosis <attr centered>[Tally Gnosis]</attr></header></section>
-        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
+        <section><header inline>[#Rage] Rage <attr centered>[Tally Rage]</temp></attr></header></section>
+        <section><header inline>[#Gnosis] Gnosis <attr centered>[Tally Gnosis]</attr></header></section>
+        <section><header inline>[#Willpower] Willpower <attr centered>[Tally Willpower]</attr></header></section>
       [/?]
       [?Race KueiJin]
-        <section><header inline>Yin Chi | Yang Chi <attr centered>[Tally Yin] | [Tally Yang]</attr></header></section>
-        <section><header inline>Demon Chi <attr centered>[Tally DemonChi]</attr></header></section>
-        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
+        <section><header inline>[#Yin] Yin Chi | Yang Chi <attr centered>[Tally Yin] | [Tally Yang]</attr></header></section>
+        <section><header inline>[#DemonChi] Demon Chi <attr centered>[Tally DemonChi]</attr></header></section>
+        <section><header inline>[#Willpower] Willpower <attr centered>[Tally Willpower]</attr></header></section>
       [/?]
       [?Race Mage]
         <section>
-          <header inline>Arete <attr centered>[Tally Arete]</attr></header>
+          <header inline>[#Arete] Arete <attr centered>[Tally Arete]</attr></header>
         </section>
         <section quintessence>
-          <attr>Quintessence [Tally Quintessence]</attr>
-          <attr>Paradox [Tally Paradox]</attr>
+          <attr>[#Quintessence] Quintessence <val>[Tally Quintessence]</val></attr>
+          <attr>[#Paradox] Paradox <val>[Tally Paradox]</val></attr>
         </section>
         <section>
-          <header inline>Willpower <attr centered>[Tally Willpower]</attr></header>
+          <header inline>[#Willpower] Willpower <attr centered>[Tally Willpower]</attr></header>
         </section>
       [/?]
       [?Race Mortal]
-        <section><header inline>Blood <attr centered>[Tally Blood]</attr></header></section>
+        <section><header inline>[#Blood] Blood <attr centered>[Tally Blood]</attr></header></section>
         <section><header inline>&nbsp; <attr centered>&nbsp;</attr></header></section>
-        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
+        <section><header inline>[#Willpower] Willpower <attr centered>[Tally Willpower]</attr></header></section>
       [/?]
       [?Race Mummy]
-        <section><header inline>Ba <attr centered>[Tally Ba]</attr></header></section>
-        <section><header inline>Ka <attr centered>[Tally Ka]</attr></header></section>
-        <section><header inline>Sekhem <attr centered>[Tally Sekhem]</attr></header></section>
+        <section><header inline>[#Ba] Ba <attr centered>[Tally Ba]</attr></header></section>
+        <section><header inline>[#Ka] Ka <attr centered>[Tally Ka]</attr></header></section>
+        <section><header inline>[#Sekhem] Sekhem <attr centered>[Tally Sekhem]</attr></header></section>
       [/?]
       [?Race Vampire]
-        <section><header inline>Max Blood <attr centered blood>[Tally Blood]</attr></header></section>
-        <section><header inline>Willpower <attr centered>[Tally Willpower]</attr></header></section>
-        <section><header inline>Path: [Path] <attr centered>[Tally PathTraits]</attr></header></section>
+        <section><header inline>[#Blood] Max Blood <attr centered blood>[Tally Blood]</attr></header></section>
+        <section><header inline>[#Willpower] Willpower <attr centered>[Tally Willpower]</attr></header></section>
+        <section><header inline>[#PathTraits] Path: [Path] <attr centered>[Tally PathTraits]</attr></header></section>
       [/?]
       [?Race Werewolf]
-        <section><header inline>Rage <attr centered>[Tally Rage TempRage]</attr></header></section>
-        <section><header inline>Gnosis <attr centered>[Tally Gnosis TempGnosis]</attr></header></section>
-        <section><header inline>Willpower <attr centered>[Tally Willpower TempWillpower]</attr></header></section>
+        <section><header inline>[#Rage] Rage <attr centered>[Tally Rage TempRage]</attr></header></section>
+        <section><header inline>[#Gnosis] Gnosis <attr centered>[Tally Gnosis TempGnosis]</attr></header></section>
+        <section><header inline>[#Willpower] Willpower <attr centered>[Tally Willpower TempWillpower]</attr></header></section>
       [/?]
     </section>
   <section attributes highlight>
     <section>
       <header>[#Physical] Physical / [#PhysicalNeg] Negative</header>
-      [repeat]<attr>[Physical]</attr>[/repeat]
-      [repeat]<attr neg>[PhysicalNeg]</attr>[/repeat]
+      [repeat]<attr>[display 0][Physical]<val>[display 8][Physical]</val></attr>[/repeat]
+      [repeat]<attr neg>[display 0][PhysicalNeg]<val>[display 8][PhysicalNeg]</val></attr>[/repeat]
     </section>
     <section>
       <header>[#Social] Social / [#SocialNeg] Negative</header>
-      [repeat]<attr>[Social]</attr>[/repeat]
-      [repeat]<attr neg>[SocialNeg]</attr>[/repeat]
+      [repeat]<attr>[display 0][Social]<val>[display 8][Social]</val></attr>[/repeat]
+      [repeat]<attr neg>[display 0][SocialNeg]<val>[display 8][SocialNeg]</val></attr>[/repeat]
     </section>
     <section>
       <header>[#Mental] Mental / [#MentalNeg] Negative</header>
-      [repeat]<attr>[Mental]</attr>[/repeat]
-      [repeat]<attr neg>[MentalNeg]</attr>[/repeat]
+      [repeat]<attr>[display 0][Mental]<val>[display 8][Mental]</val></attr>[/repeat]
+      [repeat]<attr neg>[display 0][MentalNeg]<val>[display 8][MentalNeg]</val></attr>[/repeat]
     </section>
   </section>
   <section highlight other>
     <section>
       <header>[#Abilities] Abilities</header>
-      [repeat]<attr>[Abilities]</attr>[/repeat]
+      [repeat]
+        <attr>[display 0][Abilities]<val>[display 8][Abilities]</val></attr>
+      [/repeat]
+      [display 7]
       <none>None</none>
     </section>
     <section>
@@ -305,13 +308,13 @@
     <section>
       <section>
         <header>[#Backgrounds] Backgrounds</header>
-        [repeat]<attr>[Backgrounds]</attr>[/repeat]
+        [repeat]<attr>[display 0][Backgrounds]<val>[display 8][Backgrounds]</val></attr>[/repeat]
         <none>None</none>
       </section>
       <section>
         <header>[#Merits] Merits / [#Flaws] Flaws</header>
-        [repeat]<attr merit>[Merits]</attr>[/repeat]
-        [repeat]<attr flaw>[Flaws]</attr>[/repeat]
+        [repeat]<attr merit>[display 0][Merits]<val>[display 8][Merits]</val></attr>[/repeat]
+        [repeat]<attr flaw>[display 0][Flaws]<val>[display 8][Flaws]</val></attr>[/repeat]
         <none>None</none>
       </section>
       <section>
