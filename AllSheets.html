@@ -62,6 +62,7 @@
         [/?]
         [?Race Vampire]
           <attr>Clan<val>[Clan]</val></attr>
+          <attr>Generation<val>[Generation]</val></attr>
           <attr>Sect<val>[Sect]</val></attr>
         [/?]
         [?Race Werewolf]
@@ -114,7 +115,8 @@
           <attr>Sekhem<val>[Sekhem]</val></attr>
         [/?]
         [?Race Vampire]
-          <attr>Generation<val>[Generation]</val></attr>
+          <attr>Nature<val>[Nature]</val></attr>
+          <attr>Demeanor<val>[Demeanor]</val></attr>
           <attr>Title<val>[Title]</val></attr>
         [/?]
         [?Race Werewolf]
@@ -129,9 +131,9 @@
           <attr>Threshold<val>[Threshold]</val></attr>
         [/?]
         [?Race Fera]
-          <attr [Fera] glory><val> [Tally Glory]<temp>[TempGlory]</temp></val></attr>
-          <attr [Fera] honor><val> [Tally Honor]<temp>[TempHonor]</temp></val></attr>
-          <attr [Fera] wisdom><val> [Tally Wisdom]<temp>[TempWisdom]</temp></val></attr>
+          <attr [Fera] glory> ([#Glory])<val> [Tally Glory]<temp>[TempGlory]</temp></val></attr>
+          <attr [Fera] honor> ([#Honor])<val> [Tally Honor]<temp>[TempHonor]</temp></val></attr>
+          <attr [Fera] wisdom> ([#Wisdom])<val> [Tally Wisdom]<temp>[TempWisdom]</temp></val></attr>
         [/?]
         [?Race KueiJin]
           <attr>Nature<val>[Nature]</val></attr>
@@ -153,13 +155,14 @@
           <attr>Balance<val>[MBalance]</val></attr>
         [/?]
         [?Race Vampire]
-          <attr>Nature<val>[Nature]</val></attr>
-          <attr>Demeanor<val>[Demeanor]</val></attr>
+          <attr>Conscience<val>[conscience]</val></attr>
+          <attr>Courage<val>[Tally Courage]</val></attr>
+          <attr>Self-Control<val>[Tally SelfControl]</val></attr>
         [/?]
         [?Race Werewolf]
-          <attr garou glory><val> [Tally Glory]<temp>[TempGlory]</temp></val></attr>
-          <attr garou honor><val> [Tally Honor]<temp>[TempHonor]</temp></val></attr>
-          <attr garou wisdom><val> [Tally Wisdom]<temp>[TempWisdom]</temp></val></attr>
+          <attr garou glory> ([#Glory])<val> [Tally Glory]<temp>[TempGlory]</temp></val></attr>
+          <attr garou honor> ([#Honor])<val> [Tally Honor]<temp>[TempHonor]</temp></val></attr>
+          <attr garou wisdom> ([#Wisdom])<val> [Tally Wisdom]<temp>[TempWisdom]</temp></val></attr>
         [/?]
       </section>
     </section>
@@ -170,7 +173,7 @@
         <section><header inline>[#Banality] Banality <attr centered>[Tally Banality]</attr></header></section>
       [/?]
       [?Race Fera]
-        <section><header inline>[#Rage] Rage <attr centered>[Tally Rage]</temp></attr></header></section>
+        <section><header inline>Rage <attr centered>[Tally Rage]</attr></header></section>
         <section><header inline>[#Gnosis] Gnosis <attr centered>[Tally Gnosis]</attr></header></section>
         <section><header inline>[#Willpower] Willpower <attr centered>[Tally Willpower]</attr></header></section>
       [/?]
@@ -217,35 +220,38 @@
       <header>[#Physical] Physical / [#PhysicalNeg] Negative</header>
       [repeat]<attr>[display 0][Physical]<val>[display 8][Physical]</val></attr>[/repeat]
       [repeat]<attr neg>[display 0][PhysicalNeg]<val>[display 8][PhysicalNeg]</val></attr>[/repeat]
+      [display 7]
     </section>
     <section>
       <header>[#Social] Social / [#SocialNeg] Negative</header>
       [repeat]<attr>[display 0][Social]<val>[display 8][Social]</val></attr>[/repeat]
       [repeat]<attr neg>[display 0][SocialNeg]<val>[display 8][SocialNeg]</val></attr>[/repeat]
+      [display 7]
     </section>
     <section>
       <header>[#Mental] Mental / [#MentalNeg] Negative</header>
       [repeat]<attr>[display 0][Mental]<val>[display 8][Mental]</val></attr>[/repeat]
       [repeat]<attr neg>[display 0][MentalNeg]<val>[display 8][MentalNeg]</val></attr>[/repeat]
+      [display 7]
     </section>
   </section>
   <section highlight other>
     <section>
-      <header>[#Abilities] Abilities</header>
-      [repeat]
-        <attr>[display 0][Abilities]<val>[display 8][Abilities]</val></attr>
-      [/repeat]
-      [display 7]
-      <none>None</none>
-    </section>
-    <section>
       <section>
-        <header>Items/Equipment</header>
+        <header>[#Abilities] Abilities</header>
         [repeat]
-          <attr>[display 0][Equipment]<val>[display 10][Equipment]</val></attr>
+          <attr>[display 0][Abilities]<val>[display 8][Abilities]</val></attr>
         [/repeat]
         [display 7]
+        <none>None</none>
       </section>
+      <section>
+        <header>Notes</header>
+        <attr notes>[Notes]</attr>
+        <none>None</none>
+      </section>
+    </section>
+    <section>
       <section race="Changeling">
         <header>[#Arts] Arts</header>
         [repeat]<attr>[Arts 0]</attr>[/repeat]
@@ -304,23 +310,34 @@
         [repeat]<attr>[Rites 0]</attr>[/repeat]
         <none>None</none>
       </section>
+      <section>
+        <header>Items/Equipment</header>
+        [repeat]
+          <attr>[display 0][Equipment]<val>[display 10][Equipment]</val></attr>
+        [/repeat]
+        <none>None</none>
+        [display 7]
+      </section>
     </section>
     <section>
       <section>
         <header>[#Backgrounds] Backgrounds</header>
         [repeat]<attr>[display 0][Backgrounds]<val>[display 8][Backgrounds]</val></attr>[/repeat]
         <none>None</none>
+        [display 7]
       </section>
       <section>
         <header>[#Merits] Merits / [#Flaws] Flaws</header>
         [repeat]<attr merit>[display 0][Merits]<val>[display 8][Merits]</val></attr>[/repeat]
         [repeat]<attr flaw>[display 0][Flaws]<val>[display 8][Flaws]</val></attr>[/repeat]
         <none>None</none>
+        [display 7]
       </section>
       <section>
         <header>Influences</header>
-        [repeat]<attr>[Influences]</attr>[/repeat]
+        [repeat]<attr>[display 0][Influences]<val>[display 8][Influences]</val></attr>[/repeat]
         <none>None</none>
+        [display 7]
       </section>
       <section race="Vampire">
         <header>Blood Bonds / Viniculum</header>
@@ -350,7 +367,19 @@
         .filter(el => !el.closest(`character.${el.getAttribute('race')}`))
         .forEach(el => el.remove())
 
-      document.querySelectorAll('attr:empty').forEach(attr => attr.parentElement.removeChild(attr));
+      document.querySelectorAll('val:empty').forEach(val => val.remove())
+      document.querySelectorAll('attr:empty').forEach(attr => attr.remove())
+
+      document.querySelectorAll('attr[notes]').forEach(attr => {
+        const ul = document.createElement('ul')
+        attr.innerHTML.split('<br>').map(ln => {
+          const li = document.createElement('li')
+          li.textContent = ln
+          ul.appendChild(li)
+        })
+        attr.textContent = ''
+        attr.appendChild(ul)
+      })
 
       // Sort by Type, then by Name
       const $body = document.querySelector('body')
@@ -432,6 +461,8 @@
     attr[fera-descriptor], attr[fera-descriptor] > val { display: flex; flex-direction: row; justify-content: space-evenly; }
     attr[fera-descriptor] > val { display: flex; flex: 1; justify-content: space-between; }
     val[renown] { display: flex; flex: 1; float: none; justify-content: space-between; }
+    [honor]:before, [glory]:before, [wisdom]:before { margin-right: .25em; }
+
     [ajaba][honor]:before,
     [ratkin][honor]:before { content: 'Obligation' }
     [ananasi][honor]:before { content: 'Wisdom' }
@@ -579,6 +610,9 @@
 
     attr[health] dot { background-color: transparent; }
 
+    attr[notes] { font-weight: normal; white-space: normal; }
+    attr[notes] > ul { margin: 0; padding: 0 0 0 1.5em; }
+
     attr + attr[neg] { margin-top: 5px; }
     attr[neg] + attr[neg] { margin-top: 0; }
     attr[neg]:before, attr[merit]:before, attr[flaw]:before {
@@ -589,13 +623,9 @@
     attr[merit]:before { content: 'M: '; }
     attr[flaw]:before { content: 'F: '; }
 
-    [highlight] attr:nth-child(odd) {
-      background: #eee;
-    }
+    [highlight] attr:nth-child(odd) { background: #eee; }
 
-    attr:empty, attr + attr:empty + none, attr:not(:empty) + none {
-      display: none;
-    }
+    attr:empty, attr + attr:empty + none, attr:not(:empty) + none { display: none; }
     attr:empty + none, none {
       border-top: 1px solid #666;
       display: block;
@@ -603,10 +633,7 @@
       padding: 3px;
       text-align: center;
     }
-    none {
-      color: transparent;
-      min-height: 100px;
-    }
+    none { color: transparent; min-height: 100px; }
 
     section[quintessence] attr {
       font-family: Abbess;
